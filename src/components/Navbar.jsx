@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className='sm:hidden flex justify-between items-center'>
         <img src={Header} className='w-full' />
         <div>
-          <div className='mx-2 relative'>
+          <div className='mx-2'>
             <img 
             src={toggle ? Close : Menu}
             onClick={() => setToggle((prev) => !prev)}

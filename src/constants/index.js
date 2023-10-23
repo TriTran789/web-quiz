@@ -7,7 +7,7 @@ export const  contentBenefit = [
     {
         id: 2,
         titile: "Bảo mật và chống gian lận: ",
-        desc: "Đảm bảo tính bảo mật cho các đề thi và quá trình thi trắc nghiệm, ngăn chặn các hành vi gian lận và đảm bảo tính công bằng trong việc đánh giá kiến thức."
+        desc: "Đảm bảo tính bảo mật cho các đề thi và quá trình thi, ngăn chặn các hành vi gian lận và đảm bảo tính công bằng trong việc đánh giá kiến thức."
     },
     {
         id: 3,

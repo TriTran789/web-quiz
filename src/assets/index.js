@@ -8,6 +8,10 @@ import RegisterBtn from './RegisterBtn.svg'
 import Header from './Header.svg'
 import Menu from './Menu.svg'
 import Close from './Close.svg'
+import ContentHeader from './ContentHeader.svg'
+import ContentFrame from './ContentFrame.svg'
+import AboutFrame from './AboutFrame.svg'
+import Logo from './Logo.svg'
 
 export {
     Arrow,
@@ -19,5 +23,9 @@ export {
     RegisterBtn,
     Header,
     Menu,
-    Close
+    Close,
+    ContentHeader,
+    ContentFrame,
+    AboutFrame, 
+    Logo
 }

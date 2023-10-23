@@ -6,7 +6,7 @@ const Hero = () => {
     <div className='flex justify-center items-center'>
       <div className='md:mt-20 mt-14 h-auto md:w-[60%] w-[90%] relative'>
         <img src={HeroImg} />
-        <img src={Welcome} className='absolute top-[5%] left-[15%] h-auto w-[70%]'/>
+        <img src={Welcome} className='absolute top-[5%] left-[15%] h-auto w-[70%] z-0'/>
       </div>
     </div>
   )

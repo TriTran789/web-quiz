@@ -20,19 +20,23 @@ const Navbar = () => {
 
       <div className='sm:hidden flex justify-between items-center'>
         <img src={Header} className='w-full' />
-        <div>
-          <div className='mx-2'>
-            <img 
-            src={toggle ? Close : Menu}
-            onClick={() => setToggle((prev) => !prev)}
-            className='w-16'
-            />
-            <div className={`${toggle ? 'flex' : 'hidden'} absolute flex-col w-24 right-0 z-10 justify-center items-center mt-4`}>
-              <div>TRANG CHỦ</div>
-              <div>GIỚI THIỆU</div>
-              <div>ĐĂNG NHẬP</div>
+        <img 
+          src={Menu} 
+          className='w-16 mx-2' 
+          onClick={() => setToggle((prev) => !prev)}
+        />
+        <div className={`absolute top-0 right-0 left-0 bottom-0 bg-white/50 z-20 ${toggle ? 'block' : 'hidden'}`}>
+          <ul className='border-black border float-right text-2xl bg-white py-4'>
+            <div 
+              className='flex justify-end mb-2 mr-6'
+              onClick={() => setToggle((prev) => !prev)}
+            >
+              <img src={Close} className='w-8' />
             </div>
-          </div>
+            <Link to='/' className='block px-6 py-2 border-[#ccc] border'>TRANG CHỦ</Link>
+            <li className='px-6 py-2 border-[#ccc] border'>GIỚI THIỆU</li>
+            <li className='px-6 py-2 border-[#ccc] border'>ĐĂNG NHẬP</li>
+          </ul>
         </div>
       </div>
     </>

@@ -1,7 +1,6 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import SubmitExamCode from '../components/SubmitExamCode'
-import Register from '../components/Register'
+
+import { Hero, SubmitExamCode, Register, Benefit, About } from '../components'
 
 const Home = () => {
   return (
@@ -9,6 +8,8 @@ const Home = () => {
       <Hero />
       <SubmitExamCode />
       <Register />
+      <Benefit />
+      <About />
     </div>
   )
 }

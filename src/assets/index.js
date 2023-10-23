@@ -9,7 +9,7 @@ import Header from './Header.svg'
 import Menu from './Menu.svg'
 import Close from './Close.svg'
 import ContentHeader from './ContentHeader.svg'
-import ContentFrame from './ContentFrame.svg'
+import ContentFrame from './ContentFrame.png'
 import AboutFrame from './AboutFrame.svg'
 import Logo from './Logo.svg'
 

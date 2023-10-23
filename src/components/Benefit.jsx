@@ -12,10 +12,10 @@ const Benefit = () => {
         </div>
         <div className="flex flex-wrap">
           {contentBenefit.map((content, index) => (
-            <div className="md:w-[50%] relative">
+            <div className="lg:w-[50%] relative">
               <img src={ContentFrame} className="" />
               <div className="absolute w-full h-full flex top-0 justify-center items-center">
-                <p className="md:text-xl text-sm w-[90%]">
+                <p className="2xl:text-xl xl:text-lg md:text-sm text-sm w-[90%]">
                   <span className="font-bold">{ content.titile }</span>
                   { content.desc }
                 </p>

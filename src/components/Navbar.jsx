@@ -6,6 +6,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
+  const [modalRegister, setModalRegister] = useState(false)
 
   const handleLoginClick = () => {
     setModalLogin(true);
@@ -75,7 +76,7 @@ const Navbar = () => {
         onClick={() => setModalLogin(false)}
         className={`${
           modalLogin ? "block" : "hidden"
-        } bg-red fixed top-0 left-0 right-0 bottom-0 bg-white/50 z-20`}
+        } fixed top-0 left-0 right-0 bottom-0 bg-white/50 z-20`}
       >
         <div className="w-full h-full flex justify-center items-center">
           <div onClick={(event) => event.stopPropagation()} className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] h-[50vh] bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative">
@@ -93,7 +94,7 @@ const Navbar = () => {
                 <input className="border rounded-md border-[#0068FF] w-[55%] max-md:w-[80%] px-4" placeholder="Mật khẩu" type="password" />
               </div>
             </div>
-            <button>Đăng nhập</button>
+            <button className="mt-8 bg-gradient-to-r from-[#0068FF] to-[#02C166] py-2 px-4 rounded-full text-white mb-8">Đăng nhập</button>
             <div className="flex w-full justify-between items-center px-4">
               <div>Đăng ký ngay</div>
               <div>Quên mật khẩu?</div>

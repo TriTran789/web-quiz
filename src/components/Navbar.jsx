@@ -2,16 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Header, Menu, Close } from "../assets/index";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setState } from "../slice/registerSlice";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
-  const [modalRegister, setModalRegister] = useState(false)
+  const dispatch = useDispatch()
 
   const handleLoginClick = () => {
     setModalLogin(true);
     setToggle(false);
   };
+
+  const handleRegisterClick = () => {
+    setModalLogin(false)
+    dispatch(setState(true))
+  }
 
   return (
     <>
@@ -80,7 +87,7 @@ const Navbar = () => {
       >
         <div className="w-full h-full flex justify-center items-center">
           <div onClick={(event) => event.stopPropagation()} className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] h-[50vh] bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative">
-            <div className="absolute w-full h-full bg-black z-[-10] mt-2 rounded-3xl ml-4"></div>
+            <div className="absolute w-full h-full bg-black z-[-10] mt-2 rounded-3xl ml-4" />
             <div className="flex justify-center items-center font-bold my-6 text-2xl text-gradient">
               Đăng nhập
             </div>
@@ -96,7 +103,9 @@ const Navbar = () => {
             </div>
             <button className="mt-8 bg-gradient-to-r from-[#0068FF] to-[#02C166] py-2 px-4 rounded-full text-white mb-8">Đăng nhập</button>
             <div className="flex w-full justify-between items-center px-4">
-              <div>Đăng ký ngay</div>
+              <div
+                onClick={handleRegisterClick}
+              >Đăng ký ngay</div>
               <div>Quên mật khẩu?</div>
             </div>
           </div>

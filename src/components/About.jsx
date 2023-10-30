@@ -4,7 +4,7 @@ import { nameMembers } from "../constants";
 
 const About = () => {
   return (
-    <div className="flex justify-center items-center mt-16 mb-16">
+    <div id="about" className="flex justify-center items-center mt-16 mb-16">
       <div className="md:w-[70%] w-[90%]">
         <div className="relative">
           <img src={ContentHeader} className="w-full" />
@@ -25,7 +25,7 @@ const About = () => {
                   <li key={nameMember.id}>{nameMember.name}</li>
                 ))}
               </ul>
-              <img src={Logo} className="w-[40%] mr-[10%]" />
+              <img src={Logo} className="w-[40%] mr-[10%] mb-[20%]" />
             </div>
           </div>
         </div>

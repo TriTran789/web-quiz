@@ -86,7 +86,7 @@ const Navbar = () => {
         } fixed top-0 left-0 right-0 bottom-0 bg-white/50 z-20`}
       >
         <div className="w-full h-full flex justify-center items-center">
-          <div onClick={(event) => event.stopPropagation()} className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] h-[50vh] bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative">
+          <div onClick={(event) => event.stopPropagation()} className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] pb-8 bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative">
             <div className="absolute w-full h-full bg-black z-[-10] mt-2 rounded-3xl ml-4" />
             <div className="flex justify-center items-center font-bold my-6 text-2xl text-gradient">
               Đăng nhập
@@ -105,6 +105,7 @@ const Navbar = () => {
             <div className="flex w-full justify-between items-center px-4">
               <div
                 onClick={handleRegisterClick}
+                className="cursor-pointer"
               >Đăng ký ngay</div>
               <div>Quên mật khẩu?</div>
             </div>

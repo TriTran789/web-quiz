@@ -25,7 +25,7 @@ const Register = () => {
       >
         <div
           onClick={(event) => event.stopPropagation()}
-          className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] h-[55vh] bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative"
+          className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative"
         >
           <div className="absolute w-full h-full bg-black z-[-10] mt-2 rounded-3xl ml-4" />
           <div className="flex justify-center items-center font-bold my-6 text-2xl text-gradient">

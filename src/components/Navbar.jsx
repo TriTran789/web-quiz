@@ -4,11 +4,27 @@ import { Header, Menu, Close } from "../assets/index";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setState } from "../slice/registerSlice";
+import http from "../baseUrl";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmitLogin = async () => {
+    await http.get("/csrf-cookie");
+    const login = await http.post("/auth/login", {
+      email: username,
+      password: password,
+    });
+    console.log(login)
+    if ((login.data.status = "success")) {
+      const user = await http.get("/user")
+      console.log(user)
+    }
+  };
 
   const handleLoginClick = () => {
     setModalLogin(true);
@@ -16,9 +32,9 @@ const Navbar = () => {
   };
 
   const handleRegisterClick = () => {
-    setModalLogin(false)
-    dispatch(setState(true))
-  }
+    setModalLogin(false);
+    dispatch(setState(true));
+  };
 
   return (
     <>
@@ -86,7 +102,10 @@ const Navbar = () => {
         } fixed top-0 left-0 right-0 bottom-0 bg-white/50 z-20`}
       >
         <div className="w-full h-full flex justify-center items-center">
-          <div onClick={(event) => event.stopPropagation()} className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] pb-8 bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative">
+          <div
+            onClick={(event) => event.stopPropagation()}
+            className="xl:w-[50%] lg:w-[55%] md:w-[70%] w-[80%] pb-8 bg-white border-2 border-[#0068FF] rounded-3xl flex flex-col items-center relative"
+          >
             <div className="absolute w-full h-full bg-black z-[-10] mt-2 rounded-3xl ml-4" />
             <div className="flex justify-center items-center font-bold my-6 text-2xl text-gradient">
               Đăng nhập
@@ -94,19 +113,32 @@ const Navbar = () => {
             <div className="w-full">
               <div className="flex justify-center items-center leading-10 text-xl mt-3">
                 <p className="w-[25%] max-md:hidden">Tên đăng nhập:</p>
-                <input className="border rounded-md border-[#0068FF] w-[55%] max-md:w-[80%] px-4" placeholder="Tên đăng nhập" />
+                <input
+                  className="border rounded-md border-[#0068FF] w-[55%] max-md:w-[80%] px-4"
+                  placeholder="Tên đăng nhập"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="flex justify-center items-center leading-10 text-xl mt-3">
                 <p className="w-[25%] max-md:hidden">Nhập mật khẩu:</p>
-                <input className="border rounded-md border-[#0068FF] w-[55%] max-md:w-[80%] px-4" placeholder="Mật khẩu" type="password" />
+                <input
+                  className="border rounded-md border-[#0068FF] w-[55%] max-md:w-[80%] px-4"
+                  placeholder="Mật khẩu"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
             </div>
-            <button className="mt-8 bg-gradient-to-r from-[#0068FF] to-[#02C166] py-2 px-4 rounded-full text-white mb-8">Đăng nhập</button>
+            <button
+              onClick={handleSubmitLogin}
+              className="mt-8 bg-gradient-to-r from-[#0068FF] to-[#02C166] py-2 px-4 rounded-full text-white mb-8"
+            >
+              Đăng nhập
+            </button>
             <div className="flex w-full justify-between items-center px-4">
-              <div
-                onClick={handleRegisterClick}
-                className="cursor-pointer"
-              >Đăng ký ngay</div>
+              <div onClick={handleRegisterClick} className="cursor-pointer">
+                Đăng ký ngay
+              </div>
               <div>Quên mật khẩu?</div>
             </div>
           </div>

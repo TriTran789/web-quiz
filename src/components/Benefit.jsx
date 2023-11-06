@@ -12,7 +12,7 @@ const Benefit = () => {
         </div>
         <div className="flex flex-wrap">
           {contentBenefit.map((content, index) => (
-            <div className="lg:w-[50%] relative">
+            <div key={index} className="lg:w-[50%] relative">
               <img src={ContentFrame} className="" />
               <div className="absolute w-full h-full flex top-0 justify-center items-center">
                 <p className="2xl:text-xl xl:text-lg md:text-sm text-sm w-[90%]">
